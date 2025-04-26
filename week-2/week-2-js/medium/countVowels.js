@@ -5,8 +5,19 @@
   Once you've implemented the logic, test your code by running
 */
 
+function isVowel(word) {
+  const result = ['a', 'e', 'i', 'o', 'u'].includes(word);
+  return result ? true : false;
+}
 function countVowels(str) {
-    // Your code here
+  let count = 0;
+  let stringArr = str.split('');
+  for (let i = 0; i < stringArr.length; i++) {
+    if (isVowel(stringArr[i].toLowerCase())) {
+      count++;
+    }
+  }
+  return count;
 }
 
 module.exports = countVowels;
